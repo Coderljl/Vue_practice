@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.red{
+				color: red;
+			}
+			.thin{
+				font-weight:200 ;
+			}
+			.italic{
+				font-style: italic;
+			}
+			.active{
+				letter-spacing: 0.5em;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<!-- <h1 class="red thin">这是一个很大的h1 </h1> -->
+			
+			<!-- 第一种使用方式，直接传递一个数组，注意：这里的class需要使用 v-bind 数据绑定 -->
+			<!-- <h1 :class="['red','thin']">这是一个很大的h1 </h1>-->
+			<!-- <h1 :class="['red','thin',flag?'active':'']">这是一个很大的h1 </h1> -->
+			<!-- 在为class 使用 v-bind绑定对象的时候，对象的属性是类名，由于 对象的属性可带引号，也可不带引号，所以这里没写引号；属性的值是一个标识符 -->
+			<!-- <h1 :class="{red:true,thin:true,active:true}">这是一个很大的h1 </h1> -->
+			<h1 :class="classObj">这是一个很大的h1 </h1>
+		</div>
+	</body>
+	<script src="js/vue.js"></script>
+	<script>
+		var vm = new Vue({
+			el: "#app",
+			data: {
+				flag:false,
+				classObj:{red:true,thin:true,active:true}
+			},
+			methods: {
+				
+			}
+		})
+	</script>
+</html>
